@@ -10,9 +10,10 @@ end_of_line = lf
 charset = utf-8
 trim_trailing_whitespace = false
 insert_final_newline = false
+max_line_length = 80
 
 [*.{c,h}]
 indent_size = 4
 indent_style = tab
-cpp_space_within_control_flow_statement_parentheses = true
 insert_final_newline = true
+cpp_indent_preprocessor = none
