@@ -65,7 +65,7 @@ LT_API int lt_cmpstdout(const char *str, const char *msg)
         lt_fail(msg);
         if (DEBUG)
             lt_print_buf();
-        write(STDOUT_FILENO, "\n", 1);
+		printf("\n");
         return (EXIT_FAILURE);
     }
     lt_close_redirect();
