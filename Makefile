@@ -6,7 +6,7 @@
 #    By: xbeheydt <xbeheydt@42lausanne.ch>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/09/03 10:24:08 by xbeheydt          #+#    #+#              #
-#    Updated: 2024/01/19 08:47:42 by xbeheydt         ###   ########.fr        #
+#    Updated: 2024/01/24 15:07:26 by xbeheydt         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -45,6 +45,13 @@ else
 # CFLAGS		+= -O3
 endif
 
+# Deps  ########################################################################
+LIBTESTER	= deps/libtester/libtester.a
+IFLAGS		+= -Ideps/libtester
+LDFLAGS     += -Ldeps/libtester
+LNKFLAGS	+= -ltester
+$(LIBTESTER): ## Compile libtester
+	$(MAKE) -C deps/libtester
 
 # Defines how to print help ####################################################
 define PRINT_HELP_PYSCRIPT
@@ -106,16 +113,3 @@ lint: ## Check format errors
 
 
 # Deps  ########################################################################
-LIBTESTER	= deps/libtester/libtester.a
-$(LIBTESTER): IFLAGS += -Ideps/libtester
-$(LIBTESTER): LDFLAGS += -Ldeps/libtester
-$(LIBTESTER): LNKFLAGS += -ltester
-$(LIBTESTER): ## Compile libtester
-	$(MAKE) -C deps/libtester
-
-d:
-ifneq ($(ARGS),)
-	echo ARGS $(ARGS)
-else
-	echo NO ARGS
-endif
