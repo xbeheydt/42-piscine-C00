@@ -6,14 +6,14 @@
 #    By: xbeheydt <xbeheydt@42lausanne.ch>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/09/03 13:24:04 by xbeheydt          #+#    #+#              #
-#    Updated: 2024/01/18 14:01:00 by xbeheydt         ###   ########.fr        #
+#    Updated: 2024/01/29 10:44:05 by xbeheydt         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 .PHONY: all clean fclean re help
 
-NAME 		= libtester
-SRCS		=
+NAME 		= libtester.a
+SRCS		= $(wildcard *.c)
 OBJS		= $(SRCS:.c=.o)
 
 RM			= rm -f
@@ -26,7 +26,7 @@ LNKFLAGS	=
 ifdef DEBUG
 CFLAGS		+= -g -O0 -DDEBUG
 else
-CFLAGS		+= -O3
+# CFLAGS		+= -O3
 endif
 
 
