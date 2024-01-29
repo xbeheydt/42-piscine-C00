@@ -6,7 +6,7 @@
 #    By: xbeheydt <xbeheydt@42lausanne.ch>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/09/03 10:24:08 by xbeheydt          #+#    #+#              #
-#    Updated: 2024/01/29 11:37:44 by xbeheydt         ###   ########.fr        #
+#    Updated: 2024/01/29 11:55:04 by xbeheydt         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -18,8 +18,8 @@ NAME		= C00
 TYPE		= exe # or lib-static or lib-dynamic
 
 SRCS		= ex00/ft_putchar.c \
-			  ex01/ft_print_alphabet.c #\
-			#   ex02/ft_print_reverse_alphabet.c #\
+			  ex01/ft_print_alphabet.c \
+			  ex02/ft_print_reverse_alphabet.c #\
 			#   ex03/ft_print_numbers.c #\
 			#   ex04/ft_is_negative.c #\
 			#   ex05/ft_print_comb.c #\
@@ -71,13 +71,13 @@ $(NAME): $(OBJS)
 
 
 tests: $(LIBTESTER) $(TESTS) ## Compile all and Run tests
-ifndef DEBUG
+# ifndef DEBUG
 ifneq ($(EX),)
 	./$(wildcard ex${EX}/*.test.out)
 else
 	$(foreach test, $(TESTS), ./$(test);)
 endif
-endif
+# endif
 
 %.o: %.c
 	$(GCC) ${CFLAGS} ${IFLAGS} ${LDFLAGS} -c $< -o $@ ${LNKFLAGS}
