@@ -3,16 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   ft_print_numbers.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: xbeheydt <xbeheydt@42lausanne.ch>          +#+  +:+       +#+        */
+/*   By: xbeheydt <xavier.beheydt@gmail.com>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/29 13:21:06 by xbeheydt          #+#    #+#             */
-/*   Updated: 2024/01/29 13:34:39 by xbeheydt         ###   ########.fr       */
+/*   Updated: 2024/12/12 17:04:55 by xbeheydt         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <unistd.h>
 
-void ft_putchar(char c)
+void	ft_putchar(char c)
 {
 	write(1, &c, 1);
 }
